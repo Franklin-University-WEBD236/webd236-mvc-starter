@@ -30,7 +30,7 @@
       <tbody>
 [[ foreach ($todos as $todo) : ]]
         <tr>
-          <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
+          <td class="align-middle">{{$todo['description']}}</td>
           <td>
             <div class="btn-toolbar align-middle float-right">
               <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('@@todo/done/{{$todo['id']}}@@')"><span class="material-icons">done</span></button>

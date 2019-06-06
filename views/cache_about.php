@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><?php echo($title); ?></title>
+    <title><?php echo(htmlentities($title)); ?></title>
     <link rel="shortcut icon" href="https://cdn.glitch.com/7635e9c3-2015-4ec8-967a-16ca37cc9e55%2Ffavicon.ico" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,7 +25,7 @@
             <a class="nav-link" href="/about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(getenv('PROJECT_DOMAIN')); ?>">Remix</a>
+            <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(htmlentities(getenv('PROJECT_DOMAIN'))); ?>">Remix</a>
           </li>
         </ul>
         <ul class="navbar-nav">
@@ -37,7 +37,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-2">
-          <h1 class="display-4"><?php echo($title); ?> model 2</h1>
+          <h1 class="display-4"><?php echo(htmlentities($title)); ?> model 2</h1>
           <p class="lead">Keep track of things that you need to do.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
@@ -46,7 +46,7 @@
 
 <div class="row">
   <div class="col-lg-8 offset-2">
-<h1>My fine title is: <?php echo($title); ?></h1>
+<h1>My fine title is: <?php echo(htmlentities($title)); ?></h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam hendrerit quam at purus dignissim, vel placerat est efficitur. In nec nisl placerat, pellentesque felis tempus, sollicitudin urna. Duis eu augue vitae massa scelerisque blandit. Aliquam vel nunc ac dui finibus venenatis at facilisis ante. Vestibulum iaculis nunc nunc, a placerat mi tincidunt ut. Sed euismod nisi eget justo tristique ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vestibulum efficitur ante, vel dignissim sem. Integer congue ac nunc sit amet tempor. Aliquam sollicitudin metus metus, nec lacinia metus lobortis ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at nulla tellus. Ut ac tellus arcu. Pellentesque pretium lorem nec mollis pretium. Morbi turpis mi, mattis id dapibus eu, blandit quis libero.</p>
 
 <p>Cras elementum, nulla non congue pulvinar, orci lorem efficitur arcu, vel ultrices lacus ligula sollicitudin tellus. Suspendisse id magna eget lacus aliquam vehicula non et mi. Curabitur elementum eu nibh eu aliquet. Mauris laoreet, dui ut tincidunt viverra, massa lacus ultricies augue, non ultricies enim enim non nunc. Curabitur pretium orci leo, sed egestas quam porttitor quis. Maecenas commodo neque a metus lobortis, quis laoreet odio volutpat. Phasellus viverra volutpat lectus ut hendrerit. Fusce vel ultrices dolor. Quisque finibus eget ligula nec elementum. Vivamus sit amet velit mollis, malesuada mauris sed, tincidunt sapien. Nulla facilisi. Mauris at lectus at libero tempor sollicitudin. Praesent finibus ligula a risus lacinia, nec vehicula orci vestibulum. Suspendisse potenti. Cras feugiat justo sit amet purus ullamcorper, in ultrices eros dignissim.</p>
