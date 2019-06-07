@@ -33,7 +33,9 @@
           <td class="align-middle">{{$todo['description']}}</td>
           <td>
             <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('@@todo/done/{{$todo['id']}}@@')"><span class="material-icons">done</span></button>
+              <form method="post" action="@@todo/done/{{$todo['id']}}@@">
+                <button type="submit" class="btn btn-success d-flex justify-content-center align-content-between mr-1"><span class="material-icons">done</span></button>
+              </form>
               <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('@@todo/edit/{{$todo['id']}}@@')"><span class="material-icons">create</span></button>
               <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('@@todo/delete/{{$todo['id']}}@@')"><span class="material-icons">delete</span></button>
             </div>
