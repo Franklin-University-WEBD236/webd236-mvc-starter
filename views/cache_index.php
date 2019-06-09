@@ -46,17 +46,19 @@
 
 <div class="row">
   <div class="col-lg-8 offset-2">
-
-      <form action="/todo/add" method="post">
-      <div class="form-group">
-        <label for="description">Add a new todo.</label>
-        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value=""/>
+    <div class="card">
+      <div class="card-header">Add a new todo</div>
+      <div class="card-body">
+        <form action="/todo/add" method="post">
+          <div class="form-group">
+            <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value=""/>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-    </form>
-
+    </div>
   </div>
 </div>
 
