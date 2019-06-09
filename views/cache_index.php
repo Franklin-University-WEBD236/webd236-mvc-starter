@@ -83,6 +83,7 @@
                 <button type="submit" class="btn btn-success d-flex justify-content-center align-content-between mr-1"><span class="material-icons">done</span></button>
               </form>
               <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">create</span></button>
+              <a href="fooey"><button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" <span class="material-icons">create</span> sdfsad </button></a>
               <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">delete</span></button>
             </div>
           </td>
