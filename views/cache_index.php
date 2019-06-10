@@ -67,8 +67,10 @@
     <h2>Recent posts</h2>
 <?php  foreach ($posts as $post) : ?>
   <div class="card">
-  <div class="card-header d-flex align-items-center">
-    <span class="h3"><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
+  <div class="card-header">
+  <div class="row align-items-center">
+    <span class="h1"><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
+  </div>
   </div>
   <div class="card-body">
     <?php echo(htmlentities($post['content'])); ?>
