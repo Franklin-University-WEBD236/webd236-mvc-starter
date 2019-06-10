@@ -58,7 +58,39 @@ function get_view($id) {
       'post' => $post
     )
   );
-  
+}
+
+function get_edit($id) {
+  $post = findPostById($id);
+  renderTemplate(
+    "views/post_addedit.php",
+    array(
+      'title' => 'Edit a blog post',
+      'operation' => "edit/$id",
+      'post' => $post
+    )
+  );
+}
+
+function post_edit($id) {
+  $post = findPostById($id);
+  $post['title'] = safeParam($_REQUEST, 'title', false);
+  $post['content'] = safeParam($_REQUEST, 'content', false);
+  $post['tags'] = safeParam($_REQUEST, 'tags', false);
+  $errors = __check_post($post);
+  if ($errors) {
+    renderTemplate(
+      "views/post_addedit.php",
+      array(
+        'title' => 'Edit a blog post',
+        'operation' => "edit/$id",
+        'errors' => $errors,
+        'post' => $post
+      )
+    );
+  }
+  updatePost($post);
+  redirectRelative("index");
 }
 
 ?>

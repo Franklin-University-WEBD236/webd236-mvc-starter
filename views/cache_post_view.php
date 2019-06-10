@@ -92,7 +92,7 @@
   <div class="col-lg-10 offset-1">
       <div class="form-group">
         <a href="/post/edit/<?php echo(htmlentities($post['id'])); ?>"><button class="btn btn-primary">Edit</button></a>
-        <a href="/post/delete/<?php echo(htmlentities($post['id'])); ?>"><button class="btn btn-danger">Delete</button></a>
+        <button class="btn btn-danger" onclick="post('/post/delete/<?php echo(htmlentities($post['id'])); ?>')">Delete</button>
         <button class="btn btn-secondary" onclick="return get('/index')">Back</button>
       </div>
   </div>
