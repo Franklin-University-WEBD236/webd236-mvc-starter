@@ -7,7 +7,7 @@
       <div class="card-body">
         {{{nl2br(htmlentities(substr($post['content'], 0, 500)))}}}
 [[ if (strlen($post['content']) > 500): ]]
-<a href="post/view/{{$post['id']}}"> see more...</a>
+&nbsp;<a href="post/view/{{$post['id']}}">see more...</a>
 [[ endif; ]]
       </div>
 [[ if ($post['tags']): ]]

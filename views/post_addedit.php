@@ -18,8 +18,8 @@
       </div>
       <div class="form-group">
         <div class="btn-toolbar align-middle">
-          <button type="submit" class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">send</span>&nbsp;Submit</button>
-          <a href="@@index@@"><button class="btn btn-secondary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">cancel</span>&nbsp;Cancel</button></a>
+          <button type="submit" class="btn btn-primary mr-1 d-flex justify-content-center align-content-between"><span class="material-icons">send</span>&nbsp;Submit</button>
+          <button class="btn btn-secondary mr-1 d-flex justify-content-center align-content-between" onclick="get('@@index@@')"><span class="material-icons">cancel</span>&nbsp;Cancel</button>
         </div>
       </div>
       <input type="hidden" id="datestamp" name="datestamp" value="{{$post['datestamp']}}" />

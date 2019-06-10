@@ -42,10 +42,11 @@ function post_add() {
         'post' => $post
       )
     );
+  } else {
+    $post['datestamp'] = time();
+    addPost($post);
+    redirectRelative("index");
   }
-  $post['datestamp'] = time();
-  addPost($post);
-  redirectRelative("index");
 }
 
 function get_view($id) {

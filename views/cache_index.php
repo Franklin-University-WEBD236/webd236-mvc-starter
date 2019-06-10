@@ -75,7 +75,7 @@
       <div class="card-body">
         <?php echo(nl2br(htmlentities(substr($post['content'], 0, 500)))); ?>
 <?php  if (strlen($post['content']) > 500): ?>
-<a href="post/view/<?php echo(htmlentities($post['id'])); ?>"> see more...</a>
+&nbsp;<a href="post/view/<?php echo(htmlentities($post['id'])); ?>">see more...</a>
 <?php  endif; ?>
       </div>
 <?php  if ($post['tags']): ?>
