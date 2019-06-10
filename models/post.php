@@ -33,17 +33,18 @@ function findPostById($id) {
 
 function findAllPosts($limit = 5) {
   global $db;
-  $st = $db -> prepare('SELECT * FROM post ORDER BY datestamp LIMIT :limit');
+  $st = $db -> prepare('SELECT * FROM post ORDER BY datestamp DESC LIMIT :limit');
   $st -> execute(array(':limit' => $limit));
   return $st -> fetchAll(PDO::FETCH_ASSOC);
 }
 
 function addPost($post) {
   global $db;
-  $st = $db -> prepare("INSERT INTO post (title, content, datestamp, tags) VALUES (:title, :content, DATE('now'), :tags)");
+  $st = $db -> prepare("INSERT INTO post (title, content, datestamp, tags) VALUES (:title, :content, :datestamp, :tags)");
   $st -> bindParam(':title', $post['title']);
   $st -> bindParam(':content', $post['content']);
   $st -> bindParam(':tags', $post['tags']);
+  $st -> bindValue(':datestamp', date('Y-m-d H:i:s T'));
   $st -> execute();
   error_log($db->lastInsertId());
   return $db->lastInsertId();

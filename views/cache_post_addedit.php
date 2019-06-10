@@ -76,7 +76,7 @@
       </div>
       <div class="form-group">
         <label for="tags">Tags</label>
-        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter tags" value="<?php echo(htmlentities($post['tags'])); ?>" />
+        <input type="text" min="1" id="tags" name="tags" class="form-control" placeholder="Enter tags" value="<?php echo(htmlentities($post['tags'])); ?>" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -90,7 +90,7 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">WEBD 236 examples copyright &copy; 2019 <a href="https://www.franklin.edu/">Franklin University</a>.</span>
+        <span class="text-muted">WEBD 236 examples copyright &copy; 2019 <a href="https://www.franklin.edu/">Franklin University</a>. Current time is <?php echo(htmlentities(date('Y-m-d H:i:s T'))); ?></span>
       </div>
     </footer>
   </body>

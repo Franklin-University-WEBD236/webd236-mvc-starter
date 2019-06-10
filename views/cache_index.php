@@ -73,7 +73,7 @@
         <a href="#"><span class="h4"><?php echo(htmlentities($post['title'])); ?></span></a><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
       </div>
       <div class="card-body">
-        <?php echo(htmlentities($post['content'])); ?>
+        <?php echo(nl2br(htmlentities(substr($post['content'], 0, 500)))); ?>
       </div>
 <?php  if ($post['tags']): ?>
       <div class="card-footer">
@@ -99,7 +99,7 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">WEBD 236 examples copyright &copy; 2019 <a href="https://www.franklin.edu/">Franklin University</a>.</span>
+        <span class="text-muted">WEBD 236 examples copyright &copy; 2019 <a href="https://www.franklin.edu/">Franklin University</a>. Current time is <?php echo(htmlentities(date('Y-m-d H:i:s T'))); ?></span>
       </div>
     </footer>
   </body>

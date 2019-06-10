@@ -76,6 +76,8 @@ function renderTemplate($view, $params) {
     $contents = preg_replace_callback('/@@\s*(.*)\s*@@/U', '__resolveRelativeUrls', $contents);
 
     $patterns = array(
+      array('src' => '/{{{/', 'dst' => '<?php echo('),
+      array('src' => '/}}}/', 'dst' => '); ?>'),
       array('src' => '/{{/', 'dst' => '<?php echo(htmlentities('),
       array('src' => '/}}/', 'dst' => ')); ?>'),
       array('src' => '/\[\[/', 'dst' => '<?php '),

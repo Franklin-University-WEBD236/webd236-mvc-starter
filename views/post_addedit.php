@@ -14,7 +14,7 @@
       </div>
       <div class="form-group">
         <label for="tags">Tags</label>
-        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter tags" value="{{$post['tags']}}" />
+        <input type="text" min="1" id="tags" name="tags" class="form-control" placeholder="Enter tags" value="{{$post['tags']}}" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
