@@ -32,4 +32,5 @@ function routeUrl() {
   exit();
 }
 
+date_default_timezone_set('America/New_York');
 routeUrl();
