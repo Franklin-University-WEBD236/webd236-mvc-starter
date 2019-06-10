@@ -1,7 +1,7 @@
 %% views/header.html %%
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-10 offset-1">
     <div class="card">
       <div class="card-header">Add a new todo</div>
       <div class="card-body">

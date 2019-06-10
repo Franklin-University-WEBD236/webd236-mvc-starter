@@ -45,7 +45,7 @@
       </div>
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
+  <div class="col-lg-10 offset-1">
     <div class="card">
       <div class="card-header">Add a new todo</div>
       <div class="card-body">
@@ -66,8 +66,13 @@
   <div class="col-lg-10 offset-1">
     <h2>Recent posts</h2>
 <?php  foreach ($posts as $post) : ?>
-  <p><?php echo(htmlentities($post['title'])); ?></p>
-
+  <div class="card">
+  <div class="card-header">
+    <span class="h3"><?php echo(htmlentities($post['title'])); ?></span><span class="float-right"><?php echo(htmlentities($post['datestamp'])); ?></span>
+  </div>
+  <div class="card-body">
+  </div>
+</div>
 <?php  endforeach; ?>
   </div>
 </div>
