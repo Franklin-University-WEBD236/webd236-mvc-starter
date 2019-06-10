@@ -1,6 +1,29 @@
 <?php
 include_once 'models/db.php';
 
+function __empty_post() {
+  return array(
+    'id' => '',
+    'title' => '',
+    'content' => '',
+    'datestamp' => '',
+    'tags' => ''
+  );
+}
+
+function __check_post($post) {
+  $errors = array();
+  if (!$post['content']) {
+    $errors['content'] = "Content may not be empty.";
+  }
+
+  if (!$post['title']) {
+    $errors['title'] = "Title may not be empty.";
+  }
+
+  return $errors;
+}
+
 function findPostById($id) {
   global $db;
   $st = $db -> prepare('SELECT * FROM post WHERE id = :id');
@@ -15,4 +38,10 @@ function findAllPosts($limit = 5) {
   return $st -> fetchAll(PDO::FETCH_ASSOC);
 }
 
+function addPost($post) {
+  global $db;
+  $st = $db -> prepare("INSERT INTO post (title, content, datestamp, tags) values (:title, :content, :datestamp, :tags)");
+  $statement -> execute();
+  return $db->lastInsertId();
+}
 ?>

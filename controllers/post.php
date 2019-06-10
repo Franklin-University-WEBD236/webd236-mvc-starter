@@ -2,28 +2,6 @@
 include_once "include/util.php";
 include_once "models/post.php";
 
-function __empty_post() {
-  return array(
-    'id' => '',
-    'title' => '',
-    'content' => '',
-    'datestamp' => '',
-    'tags' => ''
-  );
-}
-
-function __check_post($post) {
-  $errors = array();
-  if (!$post['content']) {
-    $errors['content'] = "Content may not be empty.";
-  }
-
-  if (!$post['title']) {
-    $errors['title'] = "Title may not be empty.";
-  }
-
-  return $errors;
-}
 
 function get_list() {
   $posts = findAllPosts();
@@ -43,7 +21,6 @@ function get_add() {
     array(
       'title' => 'Add a blog post',
       'operation' => 'add',
-      'errors' => '',
       'post' => $post
     )
   );
@@ -66,6 +43,9 @@ function post_add() {
       )
     );
   }
+  $post['datestamp'] = now();
+  addPost($post);
+  
 }
 
 ?>

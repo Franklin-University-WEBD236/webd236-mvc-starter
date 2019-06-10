@@ -44,7 +44,7 @@
         </div>
       </div>
       
-<?php  if (isset($errors): ?>
+<?php  if (isset($errors)): ?>
 <div class="row">
   <div class="col-lg-10 offset-1">
     <div class="alert alert-danger">

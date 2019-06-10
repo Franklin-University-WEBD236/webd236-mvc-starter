@@ -43,8 +43,8 @@
           <hr>
         </div>
       </div>
-
-<?php  if ($errors): ?>
+      
+<?php  if (isset($errors)): ?>
 <div class="row">
   <div class="col-lg-10 offset-1">
     <div class="alert alert-danger">
@@ -59,6 +59,9 @@
 </div>
 <?php  endif;?>
   
+
+      
+
 <div class="row">
   <div class="col-lg-10 offset-1">
 
