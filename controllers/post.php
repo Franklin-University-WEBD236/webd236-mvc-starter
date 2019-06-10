@@ -43,8 +43,9 @@ function post_add() {
       )
     );
   }
-  $post['datestamp'] = now();
+  $post['datestamp'] = time();
   addPost($post);
+  redirectRelative("index");
   
 }
 

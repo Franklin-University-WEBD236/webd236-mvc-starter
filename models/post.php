@@ -40,8 +40,15 @@ function findAllPosts($limit = 5) {
 
 function addPost($post) {
   global $db;
-  $st = $db -> prepare("INSERT INTO post (title, content, datestamp, tags) values (:title, :content, :datestamp, :tags)");
-  $statement -> execute();
+  $st = $db -> prepare("INSERT INTO post (title, content, datestamp, tags) VALUES (:title, :content, DATE('now'), :tags)");
+  $parameters = array();
+  foreach ($post as $key => $value) {
+    $parameters[':' . $key] = $value;
+  }
+  error_log(print_r($parameters, true));
+  $st -> execute($parameters);
+  
   return $db->lastInsertId();
 }
+
 ?>
