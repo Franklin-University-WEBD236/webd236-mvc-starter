@@ -11,7 +11,10 @@ CREATE TABLE `post`
   tags VARCHAR(255) NOT NULL
 );
 
-INSERT INTO "post" VALUES(1, 'A first blog post', 'Some nifty content goes here.', '2019-06-10 09:15:00', 'first boring');
-DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('post', 2);
+INSERT INTO "post" (title, content, datestamp, tags) VALUES('A first blog post', 'Some nifty content goes here.', '2019-06-10 09:15:00', 'first boring');
+
+INSERT INTO "post" (title, content, datestamp, tags) VALUES('A second blog post', 'Some other nifty content goes here.', '2019-06-10 12:15:00', 'second boring');
+
+--DELETE FROM sqlite_sequence;
+--INSERT INTO "sqlite_sequence" VALUES('post', 2);
 COMMIT;

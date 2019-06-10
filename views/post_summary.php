@@ -7,9 +7,11 @@
       <div class="card-body">
         {{$post['content']}}
       </div>
+[[ if ($post['tags']): ]]
       <div class="card-footer">
         Filed under: {{$post['tags']}}
       </div>
+[[ endif; ]]
     </div>
   </div>
 </div>

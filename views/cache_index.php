@@ -75,9 +75,11 @@
       <div class="card-body">
         <?php echo(htmlentities($post['content'])); ?>
       </div>
+<?php  if ($post['tags']): ?>
       <div class="card-footer">
         Filed under: <?php echo(htmlentities($post['tags'])); ?>
       </div>
+<?php  endif; ?>
     </div>
   </div>
 </div>
