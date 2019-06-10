@@ -36,9 +36,9 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 offset-2">
-          <h1 class="display-4"><?php echo(htmlentities($title)); ?> model 2</h1>
-          <p class="lead">Keep track of things that you need to do.</p>
+        <div class="col-lg-10 offset-1">
+          <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
+          <p class="lead">A simple blogging engine.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
           <hr>
         </div>
@@ -63,64 +63,15 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
-    <h2>Current To Do:</h2>
-      
-    <table class="table table-striped" frame="box">
-      <thead class="thead-dark">
-        <tr>
-          <th>Description</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-<?php  foreach ($todos as $todo) : ?>
-        <tr>
-          <td class="align-middle"><?php echo(htmlentities($todo['description'])); ?></td>
-          <td>
-            <div class="btn-toolbar align-middle float-right">
-              <form method="post" action="/todo/done/<?php echo(htmlentities($todo['id'])); ?>">
-                <button type="submit" class="btn btn-success d-flex justify-content-center align-content-between mr-1"><span class="material-icons">done</span></button>
-              </form>
-              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">create</span></button>
-              <a href="fooey"><button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" <span class="material-icons">create</span> sdfsad </button></a>
-              <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">delete</span></button>
-            </div>
-          </td>
-        </tr>
+  <div class="col-lg-10 offset-1">
+    <h2>Recent posts</h2>
+<?php  foreach ($posts as $post) : ?>
+  <p><?php echo(htmlentities($post['title'])); ?></p>
+
 <?php  endforeach; ?>
-      </tbody>
-    </table>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-lg-8 offset-2">
-    <h2>Past To Do:</h2>
-    <table class="table table-striped" frame="box">
-      <thead class="thead-dark">
-        <tr>
-          <th>Description</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-<?php  foreach ($dones as $todo) : ?>
-        <tr>
-          <td class="align-middle"><?php echo "{$todo['description']}" ?></td>
-          <td>
-            <div class="btn-toolbar align-middle float-right">
-              <button class="btn btn-success d-flex justify-content-center align-content-between mr-1" onclick="post('/todo/done/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">block</span></button>
-              <button class="btn btn-primary d-flex justify-content-center align-content-between mr-1" onclick="get('/todo/edit/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">mode_edit</span></button>
-              <button class="btn btn-danger d-flex justify-content-center align-content-between" onclick="post('/todo/delete/<?php echo(htmlentities($todo['id'])); ?>')"><span class="material-icons">delete</span></button>
-            </div>
-          </td>
-        </tr>
-<?php  endforeach; ?>
-      </tbody>
-    </table>
-  </div>
-</div>
           
     </div>
     <footer class="footer">
