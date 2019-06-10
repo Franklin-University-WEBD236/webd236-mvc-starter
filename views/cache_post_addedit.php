@@ -48,7 +48,12 @@
 <div class="row">
   <div class="col-lg-10 offset-1">
     <div class="alert alert-danger">
-      <?php echo(htmlentities($errors)); ?>
+      Please fix the following errors:
+      <ul class="mb-0">
+<?php  foreach ($errors as $error): ?>
+        <li><?php echo(htmlentities($error)); ?></li>
+<?php  endforeach; ?>
+      </ul>
     </div>
   </div>
 </div>
