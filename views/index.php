@@ -9,9 +9,9 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row mt-4">
   <div class="col-lg-10 offset-1">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="@@post/add@@"<button class="btn btn-primary">Create a post</button></a>
   </div>
 </div>
 

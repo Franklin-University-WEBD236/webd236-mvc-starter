@@ -12,4 +12,13 @@ function get_list() {
     )
   );
 }
+
+function get_add() {
+  renderTemplate(
+    "views/post_add.php",
+    array(
+      'title' => 'Add a blog post',
+    )
+  );
+}
 ?>

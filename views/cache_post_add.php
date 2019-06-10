@@ -45,37 +45,22 @@
       </div>
 
 <div class="row">
-  <div class="col-lg-10 offset-1">
-    <h2>Recent posts</h2>
-<?php  foreach ($posts as $post) : ?>
-  <div class="row mt-4">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <a href="#"><span class="h4"><?php echo(htmlentities($post['title'])); ?></span></a><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
+  <div class="col-lg-12 offset-1">
+
+    <form action="/post/add" method="post">
+      <div class="form-group">
+        <label for="description">Make your changes below</label>
+        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value="<?php echo(htmlentities($todo['description'])); ?>" />
+        <input type="hidden" id="done" name="done" value="<?php echo(htmlentities($todo['done'])); ?>" />
       </div>
-      <div class="card-body">
-        <?php echo(htmlentities($post['content'])); ?>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-secondary" onclick="return get('/index')">Cancel</button>
       </div>
-      <div class="card-footer">
-        Filed under: <?php echo(htmlentities($post['tags'])); ?>
-      </div>
-    </div>
+    </form>
   </div>
 </div>
 
-<?php  endforeach; ?>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-10 offset-1">
-    <a href="/post/add"<button class="btn btn-primary">Create a post</button></a>
-  </div>
-</div>
-
-
-          
     </div>
     <footer class="footer">
       <div class="container">
@@ -83,4 +68,4 @@
       </div>
     </footer>
   </body>
-</html> 
+</html>
