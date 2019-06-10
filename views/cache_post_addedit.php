@@ -64,42 +64,32 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <p>Posted on: <?php echo(htmlentities($post['datestamp'])); ?></p>
-  </div>
-</div>
 
-<?php  if ($post['tags']): ?>
-<div class="row">
-  <div class="col-lg-12">
-    <p>Filed under: <?php echo(htmlentities($post['tags'])); ?></p>
-  </div>
-</div>
-<?php  endif; ?>
-
-<div class="row">
-  <div class="col-lg-12">
-    <h1><?php echo(htmlentities($post['title'])); ?></h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-lg-12">
-    <?php echo(nl2br(htmlentities($post['content']))); ?>
-  </div>
-</div>
-    
-<div class="row mt-4">
-  <div class="col-lg-12">
-    <div class="form-group">
-      <div class="btn-toolbar align-middle">
-        <button class="btn btn-secondary mr-1 d-flex justify-content-center align-content-between" onclick="return get('/index')"><span class="material-icons">arrow_back</span>&nbsp;Back</button>
-        <a href="/post/edit/<?php echo(htmlentities($post['id'])); ?>"><button class="btn btn-primary d-flex justify-content-center align-content-between mr-1"><span class="material-icons">edit</span>&nbsp;Edit</button></a>
-        <button class="btn btn-danger d-flex justify-content-center align-content-between mr-1" onclick="post('/post/delete/<?php echo(htmlentities($post['id'])); ?>')"><span class="material-icons">delete</span>&nbsp;Delete</button>
+    <form action="/post/<?php echo(htmlentities($operation)); ?>" method="post">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" min="1" id="title" name="title" class="form-control" placeholder="Enter title" value="<?php echo(htmlentities($post['title'])); ?>" />
       </div>
-    </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="content" placeholder="Enter content" rows="12"><?php echo(htmlentities($post['content'])); ?></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input type="text" min="1" id="tags" name="tags" class="form-control" placeholder="Enter tags" value="<?php echo(htmlentities($post['tags'])); ?>" />
+      </div>
+      <div class="form-group">
+        <div class="btn-toolbar align-middle">
+          <button type="submit" class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">send</span>&nbsp;Submit</button>
+          <a href="/index"><button class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">cancel</span>&nbsp;Cancel</button></a>
+        <button class="btn btn-secondary" onclick="return get('/index')">Cancel</button>
+            </div>
+      </div>
+      <input type="hidden" id="datestamp" name="datestamp" value="<?php echo(htmlentities($post['datestamp'])); ?>" />
+    </form>
   </div>
 </div>
-  
+
     </div>
     <footer class="footer">
       <div class="container">

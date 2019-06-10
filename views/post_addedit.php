@@ -17,8 +17,10 @@
         <input type="text" min="1" id="tags" name="tags" class="form-control" placeholder="Enter tags" value="{{$post['tags']}}" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button class="btn btn-secondary" onclick="return get('@@index@@')">Cancel</button>
+        <div class="btn-toolbar align-middle">
+          <button type="submit" class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">send</span>&nbsp;Submit</button>
+          <a href="@@index@@"><button class="btn btn-secondary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">cancel</span>&nbsp;Cancel</button></a>
+        </div>
       </div>
       <input type="hidden" id="datestamp" name="datestamp" value="{{$post['datestamp']}}" />
     </form>
