@@ -39,7 +39,7 @@
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
           <p class="lead">A simple blogging engine.</p>
-          <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
+          <p><em>Author: PUT YOUR NAME HERE</em></p>
           <hr>
         </div>
       </div>
@@ -65,40 +65,10 @@
 <div class="row">
   <div class="col-lg-12">
     <h2>Recent posts</h2>
-<?php  foreach ($posts as $post) : ?>
-  <div class="row mt-4">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <a href="post/view/<?php echo(htmlentities($post['id'])); ?>"><span class="h4"><?php echo(htmlentities($post['title'])); ?></span></a><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
-      </div>
-      <div class="card-body">
-        <?php echo(nl2br(htmlentities(substr($post['content'], 0, 500)))); ?>
-<?php  if (strlen($post['content']) > 500): ?>
-&nbsp;<a href="post/view/<?php echo(htmlentities($post['id'])); ?>">see more...</a>
-<?php  endif; ?>
-      </div>
-<?php  if ($post['tags']): ?>
-      <div class="card-footer">
-        Filed under: <?php echo(htmlentities($post['tags'])); ?>
-      </div>
-<?php  endif; ?>
-    </div>
+    <p>Something should go here</p>
   </div>
 </div>
-
-<?php  endforeach; ?>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-12">
-  <a href="/post/add"><button class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">add_circle_outline</span>&nbsp;Add a post</button></a>
-  </div>
-</div>
-
-
-          
+  
     </div>
     <footer class="footer">
       <div class="container">
