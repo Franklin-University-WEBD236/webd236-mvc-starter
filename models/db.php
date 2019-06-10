@@ -9,8 +9,6 @@ try {
     die("Could not open database. " . $e->getMessage() . $e->getTraceAsString());
 }
 
-error_log(print_r($db, true));
-
 function adHocQuery($q) {
     global $db;
     $st = $db -> prepare($q);

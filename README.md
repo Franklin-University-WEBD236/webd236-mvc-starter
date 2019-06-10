@@ -1,4 +1,4 @@
-# WEBD 236 Lab 1 solution
+# WEBD 236 Lab 1 Starter
 
 Blog engines represent a good problem to solve in an introductory web programming course.  A blog (a shortening of “web log”) is a place for a person to post their thoughts about any subject.  A blog post is an entry in the blog.  Blog posts have a title, content, tags, and a date of posting.  Your assignment is to write a simple blog engine that lets you post as many items as you wish.  We will be revisiting this assignment in subsequent labs (i.e. to hyperlink tags, add commenting, add authentication and sessions, etc.) So, it behooves you to do a good job here.
 

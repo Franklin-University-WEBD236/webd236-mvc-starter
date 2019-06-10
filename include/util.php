@@ -96,8 +96,11 @@ function renderTemplate($view, $params) {
   echo $result;
 }
 
-function time2str($ts)
-{
+/**
+ * Converts a time string to a relative time.
+ * Stolen from https://stackoverflow.com/questions/2690504/php-producing-relative-date-time-from-timestamps
+ */
+function time2str($ts) {
   if(!ctype_digit($ts)) {
     $ts = strtotime($ts);
   }
