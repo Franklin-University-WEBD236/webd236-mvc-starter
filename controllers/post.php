@@ -12,6 +12,19 @@ function __empty_post() {
   );
 }
 
+function __check_post($post) {
+  $errors = '';
+  if (!$post['content']) {
+    $errors .= "No content specified.";
+  }
+
+  if (!$post['title']) {
+    $errors .= "No title specified.";
+  }
+
+  return $errors;
+}
+
 function get_list() {
   $posts = findAllPosts();
   renderTemplate(
@@ -34,4 +47,13 @@ function get_add() {
     )
   );
 }
+
+function post_add() {
+  $post = __empty_post();
+  $post['title'] = safeParam($_REQUEST['title'], false);
+  $post['content'] = safeParam($_REQUEST['content'], false);
+  $post['tags'] = safeParam($_REQUEST['tags'], false);
+  
+}
+
 ?>
