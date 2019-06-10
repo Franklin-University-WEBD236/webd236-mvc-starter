@@ -1,7 +1,7 @@
 <?php
 global $db;
 try {
-    $db = new PDO('sqlite:ToDoList.db3');
+    $db = new PDO('sqlite:blog.db3');
 } catch (PDOException $e) {
     die("Could not open database. " . $e->getMessage() . $e->getTraceAsString());
 }
