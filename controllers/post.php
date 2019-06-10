@@ -26,9 +26,10 @@ function get_list() {
 function get_add() {
   $post = __empty_post();
   renderTemplate(
-    "views/post_add.php",
+    "views/post_addedit.php",
     array(
       'title' => 'Add a blog post',
+      'operation' => 'add',
       'post' => $post
     )
   );
