@@ -93,4 +93,8 @@ function post_edit($id) {
   redirectRelative("index");
 }
 
+function post_delete($id) {
+  deletePostByID($id);
+  redirectRelative("index");
+}
 ?>

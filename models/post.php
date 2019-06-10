@@ -50,4 +50,21 @@ function addPost($post) {
   return $db->lastInsertId();
 }
 
+function updatePost($post) {
+  global $db;
+  $st = $db -> prepare("UPDATE post SET title=:title, content=:content, tags=:tags WHERE id=:id");
+  $st -> bindParam(':title', $post['title']);
+  $st -> bindParam(':content', $post['content']);
+  $st -> bindParam(':tags', $post['tags']);
+  $st -> bindValue(':id', $post['id']);
+  $st -> execute();
+}
+
+function deletePostById($id) {
+  global $db;
+  $st = $db -> prepare("DELETE FROM post WHERE id=:id");
+  $st -> bindValue(':id', $id);
+  $st -> execute();
+}
+
 ?>
