@@ -1,10 +1,11 @@
-<div class="card">
+<div class="card" style="">
   <div class="card-header">
-  <div class="row align-items-center">
-    <span class="h1">{{$post['title']}}</span><span class="text-muted float-right">{{time2str($post['datestamp'])}}</span>
-  </div>
+    <span>{{$post['title']}}</span><span class="text-muted float-right">{{time2str($post['datestamp'])}}</span>
   </div>
   <div class="card-body">
     {{$post['content']}}
+  </div>
+  <div class="card-footer">
+    Filed under {{$post['tags']}}
   </div>
 </div>

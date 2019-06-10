@@ -66,16 +66,18 @@
   <div class="col-lg-10 offset-1">
     <h2>Recent posts</h2>
 <?php  foreach ($posts as $post) : ?>
-  <div class="card">
+  <div class="card" style="">
   <div class="card-header">
-  <div class="row align-items-center">
-    <span class="h1"><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
-  </div>
+    <span><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
   </div>
   <div class="card-body">
     <?php echo(htmlentities($post['content'])); ?>
   </div>
+  <div class="card-footer">
+    Filed under <?php echo(htmlentities($post['tags'])); ?>
+  </div>
 </div>
+
 <?php  endforeach; ?>
   </div>
 </div>
