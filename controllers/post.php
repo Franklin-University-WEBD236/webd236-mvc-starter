@@ -46,6 +46,18 @@ function post_add() {
   $post['datestamp'] = time();
   addPost($post);
   redirectRelative("index");
+}
+
+function get_view($id) {
+  $post = findPostById($id);
+  renderTemplate(
+    "views/post_view.php",
+    array(
+      'title' => ,
+      'operation' => 'edit',
+      'post' => $post
+    )
+  );
   
 }
 

@@ -64,41 +64,9 @@
 
 <div class="row">
   <div class="col-lg-10 offset-1">
-    <h2>Recent posts</h2>
-<?php  foreach ($posts as $post) : ?>
-  <div class="row mt-4">
-  <div class="col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <a href="post/view/<?php echo(htmlentities($post['id'])); ?>"><span class="h4"><?php echo(htmlentities($post['title'])); ?></span></a><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
-      </div>
-      <div class="card-body">
-        <?php echo(nl2br(htmlentities(substr($post['content'], 0, 500)))); ?>
-<?php  if (strlen($post['content']) > 500): ?>
-<a href="post/view/<?php echo(htmlentities($post['id'])); ?>"> see more...</a>
-<?php  endif; ?>
-      </div>
-<?php  if ($post['tags']): ?>
-      <div class="card-footer">
-        Filed under: <?php echo(htmlentities($post['tags'])); ?>
-      </div>
-<?php  endif; ?>
-    </div>
+    <h1><?php echo(htmlentities($title)); ?></h1>
   </div>
 </div>
-
-<?php  endforeach; ?>
-  </div>
-</div>
-
-<div class="row mt-4">
-  <div class="col-lg-10 offset-1">
-    <a href="/post/add"<button class="btn btn-primary">Create a post</button></a>
-  </div>
-</div>
-
-
-          
     </div>
     <footer class="footer">
       <div class="container">
@@ -106,4 +74,4 @@
       </div>
     </footer>
   </body>
-</html> 
+</html>
