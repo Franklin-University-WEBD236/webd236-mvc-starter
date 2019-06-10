@@ -15,8 +15,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="https://cdn.glitch.com/7635e9c3-2015-4ec8-967a-16ca37cc9e55%2Ftodo.svg" width="30" height="30" class="d-inline-block align-top" alt="">To Do List</a>
+        <a class="navbar-brand" href="/">
+          <img src="https://cdn.glitch.com/5b0f8a54-892a-4d86-9d84-94836d1a3a6c%2Fblog.svg?v=1560192184638" width="30" height="30" class="d-inline-block align-top" alt=""> My Blog Engine</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -36,7 +36,7 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-lg-10 offset-1">
+        <div class="col-lg-12">
           <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
           <p class="lead">A simple blogging engine.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
@@ -46,7 +46,7 @@
       
 <?php  if (isset($errors)): ?>
 <div class="row">
-  <div class="col-lg-10 offset-1">
+  <div class="col-lg-12">
     <div class="alert alert-danger">
       Please fix the following errors:
       <ul class="mb-0">
@@ -63,7 +63,7 @@
       
 
 <div class="row">
-  <div class="col-lg-10 offset-1">
+  <div class="col-lg-12">
     <h2>Recent posts</h2>
 <?php  foreach ($posts as $post) : ?>
   <div class="row mt-4">
@@ -92,7 +92,7 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-lg-10 offset-1">
+  <div class="col-lg-12">
     <a href="/post/add"<button class="btn btn-primary">Create a post</button></a>
   </div>
 </div>

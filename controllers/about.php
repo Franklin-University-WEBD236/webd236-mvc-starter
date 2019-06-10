@@ -5,7 +5,7 @@ function get_index() {
   renderTemplate(
     "views/about.php",
     array(
-      'title' => 'About To Do List'
+      'title' => 'About My Blog Engine'
     )
   );
 }

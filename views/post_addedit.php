@@ -1,7 +1,7 @@
 %% views/header.html %%
 
 <div class="row">
-  <div class="col-lg-10 offset-1">
+  <div class="col-lg-12">
 
     <form action="@@post/{{$operation}}@@" method="post">
       <div class="form-group">

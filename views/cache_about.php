@@ -16,7 +16,7 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="https://cdn.glitch.com/7635e9c3-2015-4ec8-967a-16ca37cc9e55%2Ftodo.svg" width="30" height="30" class="d-inline-block align-top" alt="">To Do List</a>
+          <img src="https://cdn.glitch.com/5b0f8a54-892a-4d86-9d84-94836d1a3a6c%2Fblog.svg?v=1560192184638" width="30" height="30" class="d-inline-block align-top" alt=""> My Blog Engine</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
@@ -36,7 +36,7 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-lg-10 offset-1">
+        <div class="col-lg-12">
           <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
           <p class="lead">A simple blogging engine.</p>
           <p><em>Author: <a href="https://www.franklin.edu/about-us/faculty-staff/faculty-profiles/whittakt">Todd Whittaker</a></em></p>
@@ -46,7 +46,7 @@
       
 <?php  if (isset($errors)): ?>
 <div class="row">
-  <div class="col-lg-10 offset-1">
+  <div class="col-lg-12">
     <div class="alert alert-danger">
       Please fix the following errors:
       <ul class="mb-0">
@@ -63,8 +63,8 @@
       
 
 <div class="row">
-  <div class="col-lg-8 offset-2">
-<h1>My fine title is: <?php echo(htmlentities($title)); ?></h1>
+  <div class="col-lg-12">
+<h1><?php echo(htmlentities($title)); ?></h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam hendrerit quam at purus dignissim, vel placerat est efficitur. In nec nisl placerat, pellentesque felis tempus, sollicitudin urna. Duis eu augue vitae massa scelerisque blandit. Aliquam vel nunc ac dui finibus venenatis at facilisis ante. Vestibulum iaculis nunc nunc, a placerat mi tincidunt ut. Sed euismod nisi eget justo tristique ultrices. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut vestibulum efficitur ante, vel dignissim sem. Integer congue ac nunc sit amet tempor. Aliquam sollicitudin metus metus, nec lacinia metus lobortis ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec at nulla tellus. Ut ac tellus arcu. Pellentesque pretium lorem nec mollis pretium. Morbi turpis mi, mattis id dapibus eu, blandit quis libero.</p>
 
 <p>Cras elementum, nulla non congue pulvinar, orci lorem efficitur arcu, vel ultrices lacus ligula sollicitudin tellus. Suspendisse id magna eget lacus aliquam vehicula non et mi. Curabitur elementum eu nibh eu aliquet. Mauris laoreet, dui ut tincidunt viverra, massa lacus ultricies augue, non ultricies enim enim non nunc. Curabitur pretium orci leo, sed egestas quam porttitor quis. Maecenas commodo neque a metus lobortis, quis laoreet odio volutpat. Phasellus viverra volutpat lectus ut hendrerit. Fusce vel ultrices dolor. Quisque finibus eget ligula nec elementum. Vivamus sit amet velit mollis, malesuada mauris sed, tincidunt sapien. Nulla facilisi. Mauris at lectus at libero tempor sollicitudin. Praesent finibus ligula a risus lacinia, nec vehicula orci vestibulum. Suspendisse potenti. Cras feugiat justo sit amet purus ullamcorper, in ultrices eros dignissim.</p>
