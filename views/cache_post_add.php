@@ -49,9 +49,16 @@
 
     <form action="/post/add" method="post">
       <div class="form-group">
-        <label for="description">Make your changes below</label>
-        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value="<?php echo(htmlentities($todo['description'])); ?>" />
-        <input type="hidden" id="done" name="done" value="<?php echo(htmlentities($todo['done'])); ?>" />
+        <label for="title">Title</label>
+        <input type="text" min="1" id="title" name="title" class="form-control" placeholder="Enter title" value="<?php echo(htmlentities($post['title'])); ?>" />
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="content" rows="12"><?php echo(htmlentities($post['content'])); ?></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags</label>
+        <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter tags" value="<?php echo(htmlentities($post['tags'])); ?>" />
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
