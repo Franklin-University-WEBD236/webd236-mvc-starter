@@ -64,9 +64,40 @@
 
 <div class="row">
   <div class="col-lg-10 offset-1">
-    <h1><?php echo(htmlentities($title)); ?></h1>
+    <p>Posted on: <?php echo(htmlentities($post['datestamp'])); ?></p>
   </div>
 </div>
+
+<?php  if ($post['tags']): ?>
+<div class="row">
+  <div class="col-lg-10 offset-1">
+    <p>Filed under: <?php echo(htmlentities($post['tags'])); ?></p>
+  </div>
+</div>
+<?php  endif; ?>
+
+<div class="row">
+  <div class="col-lg-10 offset-1">
+    <h1><?php echo(htmlentities($post['title'])); ?></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-10 offset-1">
+    <?php echo(nl2br(htmlentities($post['content']))); ?>
+  </div>
+</div>
+    
+<div class="row mt-4">
+  <div class="col-lg-10 offset-1">
+      <div class="form-group">
+        <a href="/post/edit/<?php echo(htmlentities($post['id'])); ?>"><button class="btn btn-primary">Edit</button></a>
+        <a href="/post/delete/<?php echo(htmlentities($post['id'])); ?>"><button class="btn btn-danger">Delete</button></a>
+        <button class="btn btn-secondary" onclick="return get('/index')">Back</button>
+      </div>
+  </div>
+</div>
+  
     </div>
     <footer class="footer">
       <div class="container">

@@ -53,7 +53,7 @@ function get_view($id) {
   renderTemplate(
     "views/post_view.php",
     array(
-      'title' => ,
+      'title' => 'View a blog post',
       'operation' => 'edit',
       'post' => $post
     )
