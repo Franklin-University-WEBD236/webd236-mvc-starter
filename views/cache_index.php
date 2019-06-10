@@ -46,41 +46,49 @@
 
 <div class="row">
   <div class="col-lg-10 offset-1">
+    <h2>Recent posts</h2>
+<?php  foreach ($posts as $post) : ?>
+  <div class="row">
+  <div class="col-lg-12">
     <div class="card">
-      <div class="card-header">Add a new todo</div>
+      <div class="card-header">
+        <span class="card-title"><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
+      </div>
       <div class="card-body">
-        <form action="/todo/add" method="post">
-          <div class="form-group">
-            <input type="text" min="1" id="description" name="description" class="form-control" placeholder="Enter description" value=""/>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form>
+        <?php echo(htmlentities($post['content'])); ?>
+      </div>
+      <div class="card-footer">
+        Filed under: <?php echo(htmlentities($post['tags'])); ?>
       </div>
     </div>
+  </div>
+</div>
+        
+        <div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title"><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
+      </div>
+      <div class="card-body">
+        <?php echo(htmlentities($post['content'])); ?>
+      </div>
+      <div class="card-footer">
+        Filed under: <?php echo(htmlentities($post['tags'])); ?>
+      </div>
+    </div>
+  </div>
+</div>
+<?php  endforeach; ?>
   </div>
 </div>
 
 <div class="row">
   <div class="col-lg-10 offset-1">
-    <h2>Recent posts</h2>
-<?php  foreach ($posts as $post) : ?>
-  <div class="card" style="">
-  <div class="card-header">
-    <span><?php echo(htmlentities($post['title'])); ?></span><span class="text-muted float-right"><?php echo(htmlentities(time2str($post['datestamp']))); ?></span>
-  </div>
-  <div class="card-body">
-    <?php echo(htmlentities($post['content'])); ?>
-  </div>
-  <div class="card-footer">
-    Filed under <?php echo(htmlentities($post['tags'])); ?>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </div>
 </div>
 
-<?php  endforeach; ?>
-  </div>
-</div>
 
           
     </div>
