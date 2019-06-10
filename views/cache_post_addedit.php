@@ -44,6 +44,16 @@
         </div>
       </div>
 
+<?php  if ($errors): ?>
+<div class="row">
+  <div class="col-lg-10 offset-1">
+    <div class="alert alert-danger">
+      <?php echo(htmlentities($errors)); ?>
+    </div>
+  </div>
+</div>
+<?php  endif;?>
+  
 <div class="row">
   <div class="col-lg-10 offset-1">
 

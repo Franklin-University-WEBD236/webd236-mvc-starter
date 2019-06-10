@@ -1,5 +1,18 @@
 %% views/header.html %%
 
+[[ if ($errors): ]]
+<div class="row">
+  <div class="col-lg-10 offset-1">
+    <div class="alert alert-danger">
+      <ul>
+[[ foreach ($)]]
+      </ul>
+      {{$errors}}
+    </div>
+  </div>
+</div>
+[[ endif;]]
+  
 <div class="row">
   <div class="col-lg-10 offset-1">
 

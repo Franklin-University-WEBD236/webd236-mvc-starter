@@ -13,13 +13,13 @@ function __empty_post() {
 }
 
 function __check_post($post) {
-  $errors = '';
+  $errors = array();
   if (!$post['content']) {
-    $errors .= "No content specified.";
+    $errors['content'] = "Content may not be empty.";
   }
 
   if (!$post['title']) {
-    $errors .= "No title specified.";
+    $errors['title'] = "Title may not be empty.";
   }
 
   return $errors;
@@ -43,6 +43,7 @@ function get_add() {
     array(
       'title' => 'Add a blog post',
       'operation' => 'add',
+      'errors' => '',
       'post' => $post
     )
   );
@@ -50,10 +51,21 @@ function get_add() {
 
 function post_add() {
   $post = __empty_post();
-  $post['title'] = safeParam($_REQUEST['title'], false);
-  $post['content'] = safeParam($_REQUEST['content'], false);
-  $post['tags'] = safeParam($_REQUEST['tags'], false);
-  
+  $post['title'] = safeParam($_REQUEST, 'title', false);
+  $post['content'] = safeParam($_REQUEST, 'content', false);
+  $post['tags'] = safeParam($_REQUEST, 'tags', false);
+  $errors = __check_post($post);
+  if ($errors) {
+    renderTemplate(
+      "views/post_addedit.php",
+      array(
+        'title' => 'Add a blog post',
+        'operation' => 'add',
+        'errors' => $errors,
+        'post' => $post
+      )
+    );
+  }
 }
 
 ?>
