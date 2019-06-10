@@ -1,20 +1,17 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-DROP TABLE IF EXISTS `todo`;
+DROP TABLE IF EXISTS `post`;
 
-CREATE TABLE `todo`
--- This table created by SQLite2009 Pro Enterprise Manager 
--- Osen Kusnadi - http://www.osenxpsuite.net 
--- Create date:2012-01-17 11:18:09
+CREATE TABLE `post`
 (
-       description VARCHAR(50) NOT NULL,
-       done INTEGER NOT NULL,
-       id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+  title VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  datestamp DATETIME NOT NULL,
+  tags VARCHAR(255) NOT NULL
 );
-INSERT INTO "todo" VALUES('Prepare a model 1 architecture example',1,2);
-INSERT INTO "todo" VALUES('Teach class on Wednesday, 7:30 PM EST.',1,5);
-INSERT INTO "todo" VALUES('Prepare a model 2 architecture example',1,6);
-INSERT INTO "todo" VALUES('Get this sample app working on Glitch',0,8);
+
+INSERT INTO "post" VALUES(1, 'A first blog post', 'Some nifty content goes here.', 'Prepare a model 1 architecture example','2019-06-10 09:15:00', 'first boring');
 DELETE FROM sqlite_sequence;
-INSERT INTO "sqlite_sequence" VALUES('todo',10);
+INSERT INTO "sqlite_sequence" VALUES('post',2);
 COMMIT;
