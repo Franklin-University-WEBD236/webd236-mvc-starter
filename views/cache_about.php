@@ -32,13 +32,16 @@
           <li class="nav-item">
             <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="phpliteadmin.php" target="blank" style="cursor:pointer">DB Admin</a>
+          </li>
         </ul>
     </nav>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
-          <p class="lead">A simple blogging engine.</p>
+          <p class="lead">A good place to start learning MVC.</p>
           <p><em>Author: PUT YOUR NAME HERE</em></p>
           <hr>
         </div>
