@@ -1,7 +1,7 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 DELETE FROM sqlite_sequence;
-
+bad
 -- DROP TABLE IF EXISTS `people`;
 -- 
 -- Here's some sql to create a table

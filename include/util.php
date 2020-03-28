@@ -140,4 +140,10 @@ function time2str($ts) {
   }
 }
 
+function flash($message) {
+  if (!isset($_SESSION['flash'])) {
+    $_SESSION['flash'] = "";
+  }
+  $_SESSION['flash'] .= $message . '<br />';
+}
 ?>

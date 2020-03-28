@@ -30,7 +30,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right">
             <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(htmlentities(getenv('PROJECT_DOMAIN'))); ?>">Remix</a>
-            <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
+            <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">DB Reset</a>
             <a class="nav-link" href="phpliteadmin.php" target="_blank" style="cursor:pointer">DB Admin</a>
           </div>
         </li>
@@ -61,6 +61,22 @@
 </div>
 <?php  endif;?>
   
+<?php  if (isset($_SESSION['flash'])): ?>
+<div class="alert alert-success alert-dismissible flash-message" role="alert" id="flash">
+  <?php echo(htmlentities($_SESSION['flash'])); ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("div.flash-message").fadeTo(1000,1).delay(2000).fadeOut(1000);
+  });
+</script>
+<?php  
+   unset($_SESSION['flash']);
+   endif;
+?>
 
       
 
