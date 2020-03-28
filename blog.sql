@@ -1,13 +1,22 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE `post`
+DROP TABLE IF EXISTS `post`
+DROP TABLE IF EXISTS `people`
+
+-- Here's some sql to create a table
+CREATE TABLE `people`
 (
   id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-  title VARCHAR(255) NOT NULL,
-  content TEXT NOT NULL,
-  datestamp DATETIME NOT NULL,
-  tags VARCHAR(255) NOT NULL
+  first_name TEXT NOT NULL,
+  last_name TEXT NOT NULL,
+  email text NOT NULL UNIQUE,
 );
+
+-- Here's some sql to add data to the table
+INSERT INTO "people" VALUES(1, "George", "Bush", "gbush@gmail.com");
+INSERT INTO "people" VALUES(1, "Barack", "Obama", "bobama@gmail.com");
+INSERT INTO "people" VALUES(1, "Barack", "Obama", "bobama@gmail.com");
+
 INSERT INTO "post" VALUES(1,'A first blog post','The emergence and growth of blogs in the late 1990s coincided with the advent of web publishing tools that facilitated the posting of content by non-technical users who did not have much experience with HTML or computer programming. Previously, a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 websites, allowing visitors to leave online comments, and it is this interactivity that distinguishes them from other static websites.[2] In that sense, blogging can be seen as a form of social networking service. Indeed, bloggers do not only produce content to post on their blogs, but also often build social relations with their readers and other bloggers.[3] However, there are high-readership blogs which do not allow comments.
 
 From: https://en.wikipedia.org/wiki/Blog','2019-06-10 09:15:00','first boring');
