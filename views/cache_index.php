@@ -24,6 +24,19 @@
           <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
           </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+              <span class="material-icons" style="vertical-align:bottom">account_circle</span> <?php echo(htmlentities($_SESSION['user']['firstName'])); ?> <?php echo(htmlentities($_SESSION['user']['lastName'])); ?>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <a class="dropdown-item" href="/user/edit/<?php echo(htmlentities($_SESSION['user']->id)); ?>">Edit profile</a>
+              <a class="dropdown-item" href="/user/password/<?php echo(htmlentities($_SESSION['user']->id)); ?>">Change password</a>
+              <a class="dropdown-item" href="/user/logout">Logout</a>
+            </div>
+          </li>
+          
+          
           <li class="nav-item">
             <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(htmlentities(getenv('PROJECT_DOMAIN'))); ?>">Remix</a>
           </li>
@@ -33,7 +46,7 @@
             <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="phpliteadmin.php" target="blank" style="cursor:pointer">DB Admin</a>
+            <a class="nav-link" href="phpliteadmin.php" target="_blank" style="cursor:pointer">DB Admin</a>
           </li>
         </ul>
     </nav>
