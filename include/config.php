@@ -1,10 +1,9 @@
 <?php
-global $systemConfig;
+define('CONFIG',
+  [
+    'author' => 'PUT YOUR NAME HERE',
+    'application' => 'MVC Starter',
+    'lead' => 'A good place to start learning MVC',
+    'database' => 'database.db3',
+  ]);
 
-$systemConfig = [
-  'author' => 'PUT YOUR NAME HERE',
-  'application' => 'MVC Starter',
-  'database' => 'database.db3',
-];
-
-define('CONFIG', $systemConfig);

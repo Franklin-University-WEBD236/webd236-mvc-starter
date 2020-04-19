@@ -1,4 +1,5 @@
 <?php
+require_once 'include/config.php';
 
 function routeUrl() {
   $method = $_SERVER['REQUEST_METHOD'];

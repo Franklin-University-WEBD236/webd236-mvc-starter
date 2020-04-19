@@ -2,8 +2,7 @@
   include_once "include/util.php";
 
   function post_index() {
-    $dbFileName = "database";
-    $output = `sqlite3 {$dbFileName}.db3 < {$dbFileName}.sql 2>&1`;
+    $output = `sqlite3 {CONFIG['database']}.db3 < {CONFIG['database']}.sql 2>&1`;
     if ($output) {
       die("<pre style='color:red'>SQLite errors in {$dbFileName}.sql\n" . $output . "</pre>");
     }

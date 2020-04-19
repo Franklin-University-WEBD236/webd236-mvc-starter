@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <a class="navbar-brand" href="/">
-        <img src="https://cdn.glitch.com/016bfea2-8732-4215-b81b-ce7f9be7f9c5%2Frocket.svg?v=1585409224951" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp;<?php echo(htmlentities($GLOBALS['systemConfig']['application'])); ?>
+        <img src="https://cdn.glitch.com/016bfea2-8732-4215-b81b-ce7f9be7f9c5%2Frocket.svg?v=1585409224951" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp;<?php echo(htmlentities(CONFIG['application'])); ?>
       </a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
@@ -40,8 +40,8 @@
       <div class="row">
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
-          <p class="lead">A good place to start learning MVC.</p>
-          <p><em>Author: PUT YOUR NAME HERE</em></p>
+          <p class="lead"><?php echo(htmlentities(CONFIG['lead'])); ?></p>
+          <p><em>Author: <?php echo(htmlentities(CONFIG['author'])); ?></em></p>
           <hr>
         </div>
       </div>
