@@ -6,43 +6,42 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/static/style.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
     <script src="/static/custom.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-          <img src="https://cdn.glitch.com/016bfea2-8732-4215-b81b-ce7f9be7f9c5%2Frocket.svg?v=1585409224951" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp;MVC Starter</a>
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-          <li class="nav-item">
+      <a class="navbar-brand" href="/">
+        <img src="https://cdn.glitch.com/016bfea2-8732-4215-b81b-ce7f9be7f9c5%2Frocket.svg?v=1585409224951" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp;<?php echo(htmlentities(CONFIG['application'])); ?>
+      </a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li> 
+      </ul>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
+            <span class="material-icons" style="vertical-align:bottom">build</span> Tools
+          </a>
+          <div class="dropdown-menu dropdown-menu-right">
             <a class="nav-link" href="https://glitch.com/edit/#!/remix/<?php echo(htmlentities(getenv('PROJECT_DOMAIN'))); ?>">Remix</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">Reset DB</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="phpliteadmin.php" target="blank" style="cursor:pointer">DB Admin</a>
-          </li>
-        </ul>
+            <a class="nav-link" onclick="post('/reset');" style="cursor:pointer">DB Reset</a>
+            <a class="nav-link" href="phpliteadmin.php" target="_blank" style="cursor:pointer">DB Admin</a>
+          </div>
+        </li>
+      </ul>          
     </nav>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <h1 class="display-4"><?php echo(htmlentities($title)); ?></h1>
-          <p class="lead">A good place to start learning MVC.</p>
-          <p><em>Author: PUT YOUR NAME HERE</em></p>
+          <p class="lead"><?php echo(htmlentities(CONFIG['lead'])); ?></p>
+          <p><em>Author: <?php echo(htmlentities(CONFIG['author'])); ?></em></p>
           <hr>
         </div>
       </div>
@@ -62,6 +61,22 @@
 </div>
 <?php  endif;?>
   
+<?php  if (isset($_SESSION['flash'])): ?>
+<div class="alert alert-success alert-dismissible flash-message" role="alert" id="flash">
+  <?php echo(htmlentities($_SESSION['flash'])); ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("div.flash-message").fadeTo(1000,1).delay(2000).fadeOut(1000);
+  });
+</script>
+<?php  
+   unset($_SESSION['flash']);
+   endif;
+?>
 
       
 
