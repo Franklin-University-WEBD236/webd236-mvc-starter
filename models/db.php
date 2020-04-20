@@ -1,7 +1,7 @@
 <?php
 global $db;
 try {
-    $db = new PDO('sqlite'.CONFIG['database']);
+    $db = new PDO('sqlite'.CONFIG['databaseFile'] . ".db3");
     if (!$db) {
       print_r($db->errorInfo());
     }
