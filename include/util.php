@@ -147,7 +147,8 @@ function flash($message) {
   $_SESSION['flash'] .= $message . '<br />';
 }
 
-function error($code, $message) {
+function errorPage($code, $message) {
+  http_response_code($code);
   renderTemplate(
     "views/". $code . ".php",
     array(

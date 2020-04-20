@@ -83,7 +83,9 @@
 <div class="row">
   <div class="col-lg-12">
     <h2>There was an error</h2>
-    <p><?php echo(htmlentities($message)); ?></p>
+    <div class="alert alert-danger" role="alert">
+      <?php echo(htmlentities($message)); ?>
+    </div>
   </div>
 </div>
   

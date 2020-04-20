@@ -3,7 +3,9 @@
 <div class="row">
   <div class="col-lg-12">
     <h2>There was an error</h2>
-    <p>{{$message}}</p>
+    <div class="alert alert-danger" role="alert">
+      {{$message}}
+    </div>
   </div>
 </div>
   
