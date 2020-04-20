@@ -4,10 +4,11 @@ try {
   $fileName = CONFIG['databaseFile'] . ".db3";
   $db = new PDO('sqlite:' . $filename);
   if (!$db) {
-    die("<pre>" . print_r($db->errorInfo(), 1) . "</pre>");
+    errorPage(500, print_r($db->errorInfo(), 1) );
   }
+  adHocQuery("PRAGMA foreign_keys=ON;");
 } catch (PDOException $e) {
-    die("Could not open database. " . $e->getMessage() . $e->getTraceAsString());
+    errorPage(500, "Could not open database. " . $e->getMessage() . $e->getTraceAsString());
 }
 
 function adHocQuery($q) {

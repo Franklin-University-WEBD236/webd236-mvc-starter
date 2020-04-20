@@ -96,6 +96,11 @@
         This will reload the database from the SQL file by running the
         <code>post_index()</code> function in 
         <code>controllers/reset.php</code>.</li>
+        <li>Remember that a URL like <a href='/say/hello'>
+          <code>say/hello</code></a> will
+          look for <code>controllers/say.php</code> and invoke the
+          function <code>get_hello()</code> (or <code>post_hello()</code>
+          depending on the HTTP method).</li>
       </ul>
     </ul>
     </p>
