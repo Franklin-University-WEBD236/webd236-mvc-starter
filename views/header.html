@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{$title}}</title>
+    <title>{{CONFIG['applicationName']. " - " . $title}}</title>
     <link rel="shortcut icon" href="https://cdn.glitch.com/7635e9c3-2015-4ec8-967a-16ca37cc9e55%2Ffavicon.ico" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,7 +13,7 @@
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
       <a class="navbar-brand" href="/">
-        <img src="https://cdn.glitch.com/016bfea2-8732-4215-b81b-ce7f9be7f9c5%2Frocket.svg?v=1585409224951" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp;{{CONFIG['application']}}
+        <img src="https://cdn.glitch.com/016bfea2-8732-4215-b81b-ce7f9be7f9c5%2Frocket.svg?v=1585409224951" width="30" height="30" class="d-inline-block align-top" alt="">&nbsp;{{CONFIG['applicationName']}}
       </a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
@@ -39,9 +39,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="display-4">{{$title}}</h1>
-          <p class="lead">{{CONFIG['lead']}}</p>
-          <p><em>Author: {{CONFIG['author']}}</em></p>
+          <h1 class="display-4">{{CONFIG['applicationName']. " - " . $title}}</h1>
+          <p class="lead">{{CONFIG['leadDescription']}}</p>
+          <p><em>Author: {{CONFIG['authorName']}}</em></p>
           <hr>
         </div>
       </div>

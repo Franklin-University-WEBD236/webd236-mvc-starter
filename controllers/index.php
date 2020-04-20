@@ -5,7 +5,7 @@ function get_index() {
   renderTemplate(
     "views/index.php",
     array(
-      'title' => 'MCV Starter',
+      'title' => 'Home',
     )
   );
 }
