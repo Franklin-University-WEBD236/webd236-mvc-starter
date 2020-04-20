@@ -146,4 +146,15 @@ function flash($message) {
   }
   $_SESSION['flash'] .= $message . '<br />';
 }
+
+function error($code, $message) {
+  renderTemplate(
+    "views/". $code . ".php",
+    array(
+      'title' => "$code Error",
+      'message' => $message,
+    )
+  );
+  exit();
+}
 ?>

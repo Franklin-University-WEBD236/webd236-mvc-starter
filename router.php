@@ -1,5 +1,6 @@
 <?php
 require_once 'include/config.php';
+require_once 'include/util.php';
 
 function routeUrl() {
   $method = $_SERVER['REQUEST_METHOD'];
@@ -19,7 +20,8 @@ function routeUrl() {
   $params = array_slice($entity, 2);
 
   if (!file_exists($controller)) {
-    die("Controller '$controller' doesn't exist.");
+    error(404, "Controller '$controller' doesn't exist. Did you create it?");
+    //die("Controller '$controller' doesn't exist.");
   }
 
   require $controller;
