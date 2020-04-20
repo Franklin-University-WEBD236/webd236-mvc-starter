@@ -2,7 +2,7 @@
 global $db;
 try {
   $fileName = CONFIG['databaseFile'] . ".db3";
-  $db = new PDO('sqlite:' . $filename);
+  $db = new PDO('sqlite:' . $fileName);
   if (!$db) {
     errorPage(500, print_r($db->errorInfo(), 1) );
   }
