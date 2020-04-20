@@ -150,12 +150,12 @@ function flash($message) {
 function errorPage($code, $message) {
   http_response_code($code);
   renderTemplate(
-    "views/". $code . ".php",
+    "views/error.php",
     array(
       'title' => "$code Error",
       'message' => $message,
     )
   );
-  exit();
+  die();
 }
 ?>

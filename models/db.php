@@ -1,10 +1,11 @@
 <?php
 global $db;
 try {
-    $db = new PDO('sqlite'.CONFIG['databaseFile'] . ".db3");
-    if (!$db) {
-      die("<pre>" . print_r($db->errorInfo(), 1) . "</pre>");
-    }
+  $fileName = CONFIG['databaseFile'] . ".db3";
+  $db = new PDO('sqlite:' . $filename);
+  if (!$db) {
+    die("<pre>" . print_r($db->errorInfo(), 1) . "</pre>");
+  }
 } catch (PDOException $e) {
     die("Could not open database. " . $e->getMessage() . $e->getTraceAsString());
 }
