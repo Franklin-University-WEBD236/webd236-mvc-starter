@@ -25,7 +25,7 @@ function routeUrl() {
 
   require $controller;
   if (!function_exists($func)) {
-    errorPage(404, "Function '$func' doesn't exist in controller '$controller'. Did you create it?");
+    errorPage(404, "Function '$func' doesn't exist in controller '$controller'. Did you a href='/framework/createController/$entity[0]'>create it?");
   }
 
   call_user_func_array($func, $params);
