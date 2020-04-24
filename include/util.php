@@ -68,7 +68,7 @@ function __cacheName($view) {
   return implode('/', $cachePath);
 }
 
-function renderTemplate($view, $params) {
+function renderTemplate($view, $params, $asString=false) {
   $useCache = false;
 
   if (!file_exists($view)) {
@@ -103,8 +103,11 @@ function renderTemplate($view, $params) {
   eval("?>" . $contents);
   $result = ob_get_contents();
   ob_end_clean();
-  echo $result;
-  exit();
+  if (!$asString) {
+    echo $result;
+    exit();
+  }
+  return $result;
 }
 
 /**

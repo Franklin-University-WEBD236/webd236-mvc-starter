@@ -20,7 +20,7 @@ function routeUrl() {
   $params = array_slice($entity, 2);
 
   if (!file_exists($controller)) {
-    errorPage(404, "Controller '$controller' doesn't exist. Did you create it?");
+    errorPage(404, "Controller '$controller' doesn't exist. Did you <a href='/framework/createController/$entity[0]'>create it</a>?");
   }
 
   require $controller;
