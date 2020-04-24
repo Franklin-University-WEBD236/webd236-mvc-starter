@@ -29,7 +29,7 @@ function routeUrl() {
   }
 
   call_user_func_array($func, $params);
-  errorPage(404, "It looks like you're not redirecting or rendering a template in <code>$func()</code> in the <code>$controller</code> controller");
+  errorPage(404, "It looks like you're not redirecting or rendering a template in <code>$func()</code> in the <code>$controller</code> controller. Maybe edit that function?");
   exit();
 }
 
