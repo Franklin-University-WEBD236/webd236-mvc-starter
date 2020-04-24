@@ -9,11 +9,14 @@ function get_createController($controller) {
 function get_createFunction($controller, $function) {
   $controller = sanitize($controller);
   $function = sanitize($function);
-  $template = file_get_contents("controllers/{$controller}.php");
-  echo $template;
+  $contents = file_get_contents("controllers/{$controller}.php");
+  $template = "<?php\nfunction {$function}() {\n\n}";
+  $template = preg_replace("/<\?php/", $template, $contents);
+  file_put_contents("controllers/{$controller}.php", $template);
+  `refresh`;
 }
 
 function sanitize($str) {
   // sanitize controller and function names
-  return mb_ereg_replace("([^\w\d_])", '', $str);
+  return preg_replace("/([^\w\d_])/", '', $str);
 }
