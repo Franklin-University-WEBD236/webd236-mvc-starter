@@ -1,5 +1,6 @@
 <?php
 function get_createView($dir, $view) {
+  strrpos($view, '.');
   $view = sanitize($view);
   $template =<<<'END'
 %% views/header.html %%
@@ -13,7 +14,9 @@ function get_createView($dir, $view) {
           
 %% views/footer.html %% 
 END;
-  echo $template;
+  file_put_contents("views/{$view}.php", $template);
+  `refresh`; // force glitch to find the new file
+  exit();
 }
 
 function get_createController($controller) {
