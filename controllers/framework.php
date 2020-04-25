@@ -32,11 +32,19 @@ function get_createFunction($controller, $function) {
   $controller = sanitize($controller);
   $function = sanitize($function);
   $contents = file_get_contents("controllers/{$controller}.php");
-  
+  $view = $controller . substring($function, strpos($function, "_") + 1);
   $template =<<<END
 <?php
   function {$function}() {
-    \n  // put your code for {$function} here\n}\n";
+    // put your code for {$function} here
+    renderTemplate(
+      "views/{$view}.php",
+      array(
+        'title' => '{$view}',
+      )
+    );
+  }
+END;
   $template = preg_replace("/<\?php/", $template, $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
