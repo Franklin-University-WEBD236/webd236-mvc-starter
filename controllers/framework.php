@@ -32,7 +32,7 @@ function get_createFunction($controller, $function) {
   $controller = sanitize($controller);
   $function = sanitize($function);
   $contents = file_get_contents("controllers/{$controller}.php");
-  $view = $controller . substring($function, strpos($function, "_") + 1);
+  $view = $controller . substr($function, strpos($function, "_") + 1);
   $template =<<<END
 <?php
   function {$function}() {
