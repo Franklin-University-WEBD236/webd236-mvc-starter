@@ -1,7 +1,7 @@
 <?php
 function get_createView($dir, $view) {
-  strrpos($view, '.');
   $view = sanitize($view);
+  
   $template =<<<'END'
 %% views/header.html %%
 
@@ -14,7 +14,8 @@ function get_createView($dir, $view) {
           
 %% views/footer.html %% 
 END;
-  file_put_contents("views/{$view}.php", $template);
+  
+  file_put_contents("views/{$view}", $template);
   `refresh`; // force glitch to find the new file
   exit();
 }
@@ -31,7 +32,11 @@ function get_createFunction($controller, $function) {
   $controller = sanitize($controller);
   $function = sanitize($function);
   $contents = file_get_contents("controllers/{$controller}.php");
-  $template = "<?php\nfunction {$function}() {\n  // put your code for {$function} here\n}\n";
+  
+  $template =<<<END
+<?php
+  function {$function}() {
+    \n  // put your code for {$function} here\n}\n";
   $template = preg_replace("/<\?php/", $template, $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
@@ -40,5 +45,7 @@ function get_createFunction($controller, $function) {
 
 function sanitize($str) {
   // sanitize controller and function names
-  return preg_replace("/([^\w\d_])/", '', $str);
+  $str = preg_replace("/([^\w\d_\.])/", '', $str);
+  $str = preg_replace("/([\.]{2,})/", ".", $str);
+  return $str;
 }
