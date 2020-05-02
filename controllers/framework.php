@@ -50,7 +50,7 @@ function {$function}() {
 
 function 
 END;
-  $template = preg_replace("/<\?php.*(function)?/U", $template, $contents, 1);
+  $template = preg_replace("/<\?php.*function/U", $template, $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
   exit();
