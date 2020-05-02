@@ -1,7 +1,8 @@
 <?php
 function get_createView($dir, $view) {
   $view = sanitize($view);
-  
+
+// -- template here ----------------------------
   $template =<<<'END'
 %% views/header.html %%
 
@@ -14,6 +15,7 @@ function get_createView($dir, $view) {
           
 %% views/footer.html %% 
 END;
+// -- template here ----------------------------
   
   file_put_contents("views/{$view}", $template);
   `refresh`; // force glitch to find the new file
@@ -22,11 +24,15 @@ END;
 
 function get_createController($controller) {
   $controller = sanitize($controller);
-  $template = =<<<'END'
-  <?php
-    require_once "include/util.php";
-  
-  END;
+
+// -- template here ----------------------------
+  $template =<<<END
+<?php
+require_once "include/util.php";
+// require_once "models/{$controller}.php";
+END;
+// -- template here ----------------------------
+
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
   exit();
@@ -37,10 +43,16 @@ function get_createFunction($controller, $function) {
   $function = sanitize($function);
   $contents = file_get_contents("controllers/{$controller}.php");
   $view = $controller . substr($function, strpos($function, "_") + 1);
+
+// -- template here ----------------------------
   $template =<<<END
 
+
 function {$function}() {
-  // put your code for {$function} here
+  // Put your code for {$function} here, something like
+  // 1. Load and validate parameters or form contents
+  // 2. Query or update the database
+  // 3. Render a template or redirect
   renderTemplate(
     "views/{$view}.php",
     array(
@@ -49,7 +61,10 @@ function {$function}() {
   );
 }
 END;
-  $template = preg_replace("/(\A.*)(\s?\?>\s?|\Z)/msU", $template, $contents, 1);
+// -- template here ----------------------------
+
+  // append the new function to the end of the file (before the closing PHP tag, if any)
+  $template = preg_replace("/(\A.*)(\?>\s?|\Z)/msU", "$1$template$2", $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
   exit();
