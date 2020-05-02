@@ -20,12 +20,12 @@ function routeUrl() {
   $params = array_slice($entity, 2);
 
   if (!file_exists($controller)) {
-    errorPage(404, "Controller '$controller' doesn't exist. Did you <a href='/framework/createController/$entity[0]'>create it</a>?");
+    errorPage(404, "Controller <code>$controller</code> doesn't exist. Do you want to <a href='/framework/createController/$entity[0]'>create it</a>?");
   }
 
   require $controller;
   if (!function_exists($func)) {
-    errorPage(404, "Function '$func' doesn't exist in controller '$controller'. Did you <a href='/framework/createFunction/$entity[0]/$func'>create it</a>?");
+    errorPage(404, "Function <code>$func()</code> doesn't exist in controller <code>$controller</code>. Do you want to <a href='/framework/createFunction/$entity[0]/$func'>create it</a>?");
   }
 
   call_user_func_array($func, $params);

@@ -50,7 +50,7 @@ function url($url) {
 function __importTemplate($matches) {
   $fileName = trim($matches[1]);
   if (!file_exists($fileName)) {
-    errorPage(404, "Imported file '$fileName' does not exist. Did you create it?");
+    errorPage(404, "Imported file <code>$fileName<code> does not exist. Did you create it?");
   }
   $contents = file_get_contents($fileName);
   $contents = preg_replace_callback('/%%\s*(.*)\s*%%/', '__importTemplate', $contents);
@@ -72,7 +72,7 @@ function renderTemplate($view, $params, $asString=false) {
   $useCache = false;
 
   if (!file_exists($view)) {
-    errorPage(404, "View '$view' does not exist. Did you <a href='/framework/createView/{$view}'>create it</a>?");
+    errorPage(404, "View <code>$view</code> does not exist. Do you want to <a href='/framework/createView/{$view}'>create it</a>?");
   }
   # do we have a cached version?
   clearstatcache();
