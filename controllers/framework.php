@@ -38,6 +38,7 @@ function get_createFunction($controller, $function) {
   $contents = file_get_contents("controllers/{$controller}.php");
   $view = $controller . substr($function, strpos($function, "_") + 1);
   $template =<<<END
+
 function {$function}() {
   // put your code for {$function} here
   renderTemplate(
@@ -47,16 +48,8 @@ function {$function}() {
     )
   );
 }
-
-function 
 END;
-  $result = "";
-  $line = strtok($contents, "\r\n");
-  while ($line !== false) {
-    $result .= $line . "\n";
-    $line = strtok("\r\n");
-  }
-  $template = preg_replace("/<\?php.*function/U", $template, $contents, 1);
+  $template = preg_replace("/(\A.*)(\s?\?>\s?|\Z)/msU", $template, $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
   exit();
