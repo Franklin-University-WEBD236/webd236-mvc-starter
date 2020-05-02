@@ -1,5 +1,5 @@
 <?php
-include_once "include/util.php";
+require_once "include/util.php";
 
 function get_index() {
   renderTemplate(

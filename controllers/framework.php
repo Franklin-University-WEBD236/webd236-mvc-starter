@@ -22,7 +22,11 @@ END;
 
 function get_createController($controller) {
   $controller = sanitize($controller);
-  $template = "<?php\n";
+  $template = =<<<'END'
+  <?php
+    require_once "include/util.php";
+  
+  END;
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
   exit();
@@ -34,18 +38,19 @@ function get_createFunction($controller, $function) {
   $contents = file_get_contents("controllers/{$controller}.php");
   $view = $controller . substr($function, strpos($function, "_") + 1);
   $template =<<<END
-<?php
-  function {$function}() {
-    // put your code for {$function} here
-    renderTemplate(
-      "views/{$view}.php",
-      array(
-        'title' => '{$view}',
-      )
-    );
-  }
+function {$function}() {
+  // put your code for {$function} here
+  renderTemplate(
+    "views/{$view}.php",
+    array(
+      'title' => '{$view}',
+    )
+  );
+}
+
+function 
 END;
-  $template = preg_replace("/<\?php/", $template, $contents, 1);
+  $template = preg_replace("/<\?php.*(function)?/U", $template, $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
   exit();
