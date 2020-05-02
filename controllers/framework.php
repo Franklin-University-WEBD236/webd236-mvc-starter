@@ -50,6 +50,12 @@ function {$function}() {
 
 function 
 END;
+  $result = "";
+  $line = strtok($contents, "\r\n");
+  while ($line !== false) {
+    $result .= $line . "\n";
+    $line = strtok("\r\n");
+  }
   $template = preg_replace("/<\?php.*function/U", $template, $contents, 1);
   file_put_contents("controllers/{$controller}.php", $template);
   `refresh`; // force glitch to find the new file
